@@ -25,6 +25,7 @@ RESET=$'\033[0m'; BOLD=$'\033[1m'; DIM=$'\033[2m'
 SEP="$(c 240) ·${RESET} "                  # dim middot separator
 
 # ---- model ----------------------------------------------------------------
+MODEL=${MODEL/ context/}          # "Opus 4.8 (1M context)" -> "Opus 4.8 (1M)"
 OUT="$(c 141)${BOLD}◈ ${MODEL}${RESET}"
 
 # ---- working directory (basename only) ------------------------------------
