@@ -58,6 +58,19 @@ chmod +x ~/.claude/statusline.sh
 Start a new Claude Code session (or run `/statusline` reload) and the status row
 appears at the bottom.
 
+### Stay in sync with a symlink (recommended for development)
+
+If you plan to tweak the script and keep it under version control, symlink it
+instead of copying. That way editing the file in your clone updates your live
+status line instantly — and `git pull`/`git push` keeps every machine in sync.
+
+```bash
+ln -s "$PWD/statusline.sh" ~/.claude/statusline.sh
+```
+
+(Run this from inside the cloned repo. If `~/.claude/statusline.sh` already
+exists, remove or back it up first: `mv ~/.claude/statusline.sh ~/.claude/statusline.sh.bak`.)
+
 ## Customizing
 
 The script uses 256-color ANSI codes via the `c()` helper. Tweak the numbers to
